@@ -19,7 +19,7 @@ export class ProduitsComponent implements OnInit {
 
   ngOnInit() {
     this.getAllProducts();
-    console.log(JSON.stringify(this.produits));
+    console.log("Noelandre TEST +",JSON.stringify(this.produits));
   }
 
   getAllProducts() {
@@ -32,7 +32,7 @@ export class ProduitsComponent implements OnInit {
         produits.statut = productsLine.statut;
         produits.idCategory = productsLine.idCategory;
         produits.idFournisseur = productsLine.idFournisseur;
-
+        console.log("Noelandre Test 2 ", productsLine)
         return produits;
       }))
     ).subscribe(newProduits => { // ajouter produit au tableau
