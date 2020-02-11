@@ -1,4 +1,7 @@
-
-<router-outlet>
-
-</router-outlet>
+<h1>{{title}}</h1>
+<div class="header-bar"></div>
+<nav>
+    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    <a routerLink="/produits" routerLinkActive="active">Produits</a>
+</nav>
+<router-outlet></router-outlet>
