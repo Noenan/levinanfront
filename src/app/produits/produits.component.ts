@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProduitServiceService} from '../services/produit-service.service';
 import {map} from 'rxjs/operators';
 import {Product} from '../models/produits';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -10,11 +11,26 @@ import {Product} from '../models/produits';
   styleUrls: ['./produits.component.css']
 })
 export class ProduitsComponent implements OnInit {
-  public produits: Product[] = [];
+  produits: Product[] = [];
+  selectedProduct: Product;
+  addingProduct = false;
+  error: any;
+  showNgFor = false;
 
-// instance qui permet d'appeler requete http
+  constructor(private router: Router, private produitService: ProduitServiceService) {}
 
-  constructor(private produitService: ProduitServiceService) {
+  getProducts(): void {
+    this.produitService
+      .getAllProducts()
+      .subscribe(
+        produits => (this.produits = produits),
+        error => (this.error = error)
+      )
+  }
+
+  addProducts(): void {
+    this.addingProduct = true;
+    this.selectedProduct = null;
   }
 
   ngOnInit() {
