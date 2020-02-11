@@ -7,6 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class ProduitServiceService {
   url = 'http://localhost:8081/';
+  crossDomain: true
 
   constructor(private http: HttpClient) {
   }
