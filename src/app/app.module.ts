@@ -7,6 +7,8 @@ import { ProduitsComponent } from './produits/produits.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
+import { AngularMaterialModule} from './angular-material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 
@@ -19,9 +21,11 @@ import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
     FournisseursComponent,
   ],
   imports: [
+    AngularMaterialModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
