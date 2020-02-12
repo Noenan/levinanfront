@@ -20,26 +20,26 @@ export class FournisseursComponent implements OnInit {
   constructor(private router: Router, private fournisseurService: FournisseurService) {
   }
 
-  getFournisseurs(): void {
+  getFournisseur(): void {
     this.fournisseurService
-      .getAllFournisseurs()
+      .getAllFournisseur()
       .subscribe(
         fournisseurs => (this.fournisseurs = fournisseurs),
         error => (this.error = error)
       );
   }
 
-  addFournisseurs(): void {
+  addFournisseur(): void {
     this.addingFournisseur = true;
     this.selectedFournisseur = null;
   }
 
   ngOnInit() {
-    this.getAllFournisseurs();
+    this.getAllFournisseur();
   }
 
-  getAllFournisseurs() {
-    this.fournisseurService.getAllFournisseurs().pipe(
+  getAllFournisseur() {
+    this.fournisseurService.getAllFournisseur().pipe(
       map(data => data.map(fournisseursLine => {
         const fournisseurs: Fournisseur = new Fournisseur();
         fournisseurs.id = fournisseursLine.id;
@@ -50,8 +50,8 @@ export class FournisseursComponent implements OnInit {
         fournisseurs.prenomGerant = fournisseursLine.prenomGerant;
         return fournisseurs;
       }))
-    ).subscribe(newFournisseur => {
-      this.fournisseurs = newFournisseur;
+    ).subscribe(newFournisseurs => {
+      this.fournisseurs = newFournisseurs;
     });
   }
 }

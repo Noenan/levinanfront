@@ -12,7 +12,7 @@ export class FournisseurService {
   constructor(private http: HttpClient) {
   }
 
-  getAllFournisseurs(): Observable<any> {
+  getAllFournisseur(): Observable<any> {
     return this.http.get<any>(this.url + 'fournisseurs');
 
   }
