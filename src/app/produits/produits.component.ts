@@ -17,7 +17,8 @@ export class ProduitsComponent implements OnInit {
   error: any;
   showNgFor = false;
 
-  constructor(private router: Router, private produitService: ProduitServiceService) {}
+  constructor(private router: Router, private produitService: ProduitServiceService) {
+  }
 
   getProducts(): void {
     this.produitService
@@ -25,7 +26,7 @@ export class ProduitsComponent implements OnInit {
       .subscribe(
         produits => (this.produits = produits),
         error => (this.error = error)
-      )
+      );
   }
 
   addProducts(): void {
@@ -35,7 +36,6 @@ export class ProduitsComponent implements OnInit {
 
   ngOnInit() {
     this.getAllProducts();
-    // console.log("Noelandre TEST +",JSON.stringify(this.produits));
   }
 
   getAllProducts() {
@@ -48,7 +48,6 @@ export class ProduitsComponent implements OnInit {
         produits.statut = productsLine.statut;
         produits.idCategory = productsLine.idCategory;
         produits.idFournisseur = productsLine.idFournisseur;
-      //  console.log("Noelandre Test 2 ", productsLine)
         return produits;
       }))
     ).subscribe(newProduits => { // ajouter produit au tableau

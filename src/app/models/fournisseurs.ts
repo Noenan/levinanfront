@@ -1,4 +1,4 @@
-export class FournisseurModel {
+export class Fournisseur {
 
   id: number;
   denomination: string;

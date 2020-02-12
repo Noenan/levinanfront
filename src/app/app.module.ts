@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProduitsComponent } from './produits/produits.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
 
 
 
@@ -15,6 +16,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     AppComponent,
     ProduitsComponent,
     DashboardComponent,
+    FournisseursComponent,
   ],
   imports: [
     BrowserModule,
